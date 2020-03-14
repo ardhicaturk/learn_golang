@@ -1,11 +1,11 @@
 package main
 
 import (
-	"net/http"
+	"github.com/ardhicaturk/learn_golang/routes"
 
+	"github.com/ardhicaturk/learn_golang/webserver/setupmiddleware"
 	"github.com/labstack/echo"
 	"github.com/labstack/echo/middleware"
-	"github.com/ardhicaturk/learn_golang/webserver/setupmiddleware"
 )
 
 func main() {
@@ -26,10 +26,9 @@ func main() {
 		},
 	}))
 
-	// router & handler for "/"
-	e.GET("/", func(c echo.Context) error {
-		return c.String(http.StatusOK, "ok\n")
-	})
+	// set group API by version
+	apiV1 := e.Group("/api/v1")
+	routes.V1(apiV1)
 
 	// Server
 	e.Logger.Fatal(e.Start(":3233"))
