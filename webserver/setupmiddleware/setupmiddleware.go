@@ -9,7 +9,7 @@ import (
 	"github.com/sirupsen/logrus"
 )
 
-func setLogMiddleware(e *echo.Echo) {
+func SetLogMiddleware(e *echo.Echo) {
 
 	log, err := logger.Logger()
 	if err != nil {
