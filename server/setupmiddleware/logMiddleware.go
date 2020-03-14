@@ -1,17 +1,15 @@
-package middlewares
+package setupmiddleware
 
 import (
 	"encoding/json"
 
-	"../../modules/logger"
-
+	"github.com/ardhicaturk/learn_golang/modules/logger"
 	"github.com/labstack/echo"
 	"github.com/labstack/echo/middleware"
 	"github.com/sirupsen/logrus"
 )
 
 func setLogMiddleware(e *echo.Echo) {
-
 	log, err := logger.Logger()
 	if err != nil {
 		panic(err)

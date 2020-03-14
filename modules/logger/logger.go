@@ -16,7 +16,6 @@ type (
 
 func Logger() (*Log, error) {
 	l := logrus.New()
-
 	logf, err := rotatelogs.New(
 		"storage/logs/access_log.%Y%m%d",
 
