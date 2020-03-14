@@ -13,6 +13,7 @@ func main() {
 	// middleware
 	e.Use(middleware.Logger())
 	e.Use(middleware.Recover())
+
 	// CORS
 	e.Use(middleware.CORSWithConfig(middleware.CORSConfig{
 		AllowOrigins: []string{"*"},
@@ -26,7 +27,7 @@ func main() {
 
 	// router & handler for "/"
 	e.GET("/", func(c echo.Context) error {
-		return c.String(http.StatusOK, "Hello World!\n")
+		return c.String(http.StatusOK, "ok\n")
 	})
 
 	// Server

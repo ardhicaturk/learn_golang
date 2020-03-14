@@ -10,6 +10,7 @@ import (
 )
 
 func setLogMiddleware(e *echo.Echo) {
+
 	log, err := logger.Logger()
 	if err != nil {
 		panic(err)

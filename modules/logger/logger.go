@@ -8,19 +8,18 @@ import (
 	"github.com/sirupsen/logrus"
 )
 
+// Log struct
 type (
 	Log struct {
 		Logger *logrus.Logger
 	}
 )
 
+// Logger function to create logger
 func Logger() (*Log, error) {
 	l := logrus.New()
 	logf, err := rotatelogs.New(
-		"storage/logs/access_log.%Y%m%d",
-
-		// symlink current log to this file
-		rotatelogs.WithLinkName("/tmp/app_access.log"),
+		"store/log/access_log.%Y%m%d",
 
 		// max : 7 days to keep
 		rotatelogs.WithMaxAge(24*7*time.Hour),
