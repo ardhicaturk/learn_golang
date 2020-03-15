@@ -14,12 +14,16 @@ Repo untuk coba-coba web server menggunakan Go Lang
 Start apps
 ```go run server.go```
 
+Start test
+```go test ./__test__/*```
+
 ## Project trees
 
 **_! Disclaimer_**: _project tree_ dibawah ini saya buat berdasarkan pengalaman pribadi dengan mempertimbangkan fungsi dan efisiensi pemrograman. Silahkan ubah sesuai dengan kebutuhan dan gaya pemrograman masing-masing.
 
 ```
 learn_golang/
+|_ __test__
 |_ handler/
     |_ v1/
         |_ databases/
@@ -42,4 +46,5 @@ learn_golang/
 4. Folder `routes` saya gunakan untuk menyimpan mapping route. Biasanya saya gunakan version number untuk mempermudah dalam development.
 5. Folder `handler` saya gunakan untuk menyimpan program endpoint handler, seluruh endpoint handler terdeklarasi di dalam file `index.go`.
 6. Folder `handler/database` saya gunakan untuk menyimpan program database transaction. Seluruh fungsi akan memberikan nilai balikan sesuai dengan balikan dari database.
-7. Fodler `handler/useCases` saya gunakan untuk kebutuhan manipulasi data dari database, fungsi di dalam folder ini akan membaca fungsi dari folder `database` untuk mendapatkan nilai balikan database dan melakukan manipulasi.
+7. Folder `handler/useCases` saya gunakan untuk kebutuhan manipulasi data dari database, fungsi di dalam folder ini akan membaca fungsi dari folder `database` untuk mendapatkan nilai balikan database dan melakukan manipulasi.
+8. Folder `__test__` saya gunakan untuk menyimpan unit test

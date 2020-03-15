@@ -13,6 +13,8 @@ func main() {
 	// middleware
 	e.Use(middleware.Logger())
 	e.Use(middleware.Recover())
+
+	// Define custom middleware
 	setupmiddleware.SetLogMiddleware(e)
 
 	// CORS
@@ -30,6 +32,6 @@ func main() {
 	apiV1 := e.Group("/api/v1")
 	routes.V1(apiV1)
 
-	// Server
+	// Server init on port 3233
 	e.Logger.Fatal(e.Start(":3233"))
 }
